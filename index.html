@@ -1,128 +1,894 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
+
   <head>
+
         <meta charset="UTF-8">
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Home Care - Cuidados Domiciliares</title>
+
+        <title>ASF Consultoria - Home Care por Decisão Judicial</title>
+  
       <style>
+
                 * {
+
                               margin: 0;
+
                               padding: 0;
+
                               box-sizing: border-box;
+
                 }
+
+
+
+
                 body {
-                              font-family: 'Arial', sans-serif;
-                              line-height: 1.6;
-                              color: #333;
-                }
-                header {
+
+                              font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+
                               background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                              color: white;
-                              padding: 2rem;
-                              text-align: center;
-                }
-                header h1 {
-                              font-size: 2.5rem;
-                              margin-bottom: 0.5rem;
-                }
-                nav {
-                              background-color: #333;
-                              padding: 1rem;
+
+                              min-height: 100vh;
+
                               display: flex;
+
                               justify-content: center;
-                              gap: 2rem;
+
+                              align-items: center;
+
+                              padding: 20px;
+
                 }
-                nav a {
-                              color: white;
-                              text-decoration: none;
-                              font-weight: bold;
-                              transition: color 0.3s;
-                }
-                nav a:hover {
-                              color: #667eea;
-                }
+
+
+
+
                 .container {
-                              max-width: 1200px;
-                              margin: 0 auto;
-                              padding: 2rem;
+
+                              background: white;
+
+                              border-radius: 12px;
+
+                              box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+
+                              max-width: 600px;
+
+                              width: 100%;
+
+                              padding: 40px;
+
                 }
-                .welcome {
-                              background-color: #f4f4f4;
-                              padding: 2rem;
-                              border-radius: 5px;
-                              margin-bottom: 2rem;
+
+
+
+
+                .header {
+
+                              display: flex;
+
+                              align-items: center;
+
+                              justify-content: space-between;
+
+                              margin-bottom: 30px;
+
+                              gap: 15px;
+
                 }
-                .features {
-                              display: grid;
-                              grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                              gap: 2rem;
-                              margin: 2rem 0;
+
+
+
+
+                .logo {
+
+                              flex-shrink: 0;
+
+                              display: flex;
+
+                              align-items: center;
+
+                              border: 4px solid #0090D0;
+
+                              border-radius: 10px;
+
+                              padding: 4px;
+
                 }
-                .feature {
-                              background-color: #fff;
-                              padding: 1.5rem;
-                              border-radius: 5px;
-                              box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+
+
+
+                .logo svg {
+
+                              width: 110px;
+
+                              height: auto;
+
                 }
-                .feature h3 {
-                              color: #667eea;
-                              margin-bottom: 1rem;
+
+
+
+
+                .header-text h1 {
+
+                              font-size: 22px;
+
+                              color: #333;
+
+                              margin-bottom: 4px;
+
                 }
-                footer {
-                              background-color: #333;
+
+
+
+
+                .header-text p {
+
+                              font-size: 13px;
+
+                              color: #999;
+
+                }
+
+
+
+
+                .alert-badge {
+
+                              display: inline-block;
+
+                              background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
                               color: white;
-                              text-align: center;
-                              padding: 1rem;
-                              margin-top: 2rem;
+
+                              font-size: 11px;
+
+                              font-weight: 600;
+
+                              padding: 4px 12px;
+
+                              border-radius: 20px;
+
+                              margin-bottom: 16px;
+
+                              letter-spacing: 0.5px;
+
+                              text-transform: uppercase;
+
                 }
+
+
+
+
+                .info-box {
+
+                              background: #e8f0ff;
+
+                              border-left: 4px solid #667eea;
+
+                              padding: 20px;
+
+                              border-radius: 8px;
+
+                              margin-bottom: 20px;
+
+                              line-height: 1.7;
+
+                              color: #333;
+
+                              font-size: 14px;
+
+                }
+
+
+
+
+                .info-box strong {
+
+                              color: #5a6fd6;
+
+                }
+
+
+
+
+                .info-box .highlight {
+
+                              display: block;
+
+                              margin-top: 12px;
+
+                              font-weight: 600;
+
+                              color: #764ba2;
+
+                }
+
+
+
+
+                .rights-list {
+
+                              background: #f5f7ff;
+
+                              border-radius: 8px;
+
+                              padding: 16px 20px;
+
+                              margin-bottom: 20px;
+
+                }
+
+
+
+
+                .rights-list p {
+
+                              font-size: 13px;
+
+                              color: #666;
+
+                              margin-bottom: 8px;
+
+                              font-weight: 600;
+
+                              text-transform: uppercase;
+
+                              letter-spacing: 0.5px;
+
+                }
+
+
+
+
+                .rights-list ul {
+
+                              list-style: none;
+
+                              display: flex;
+
+                              flex-direction: column;
+
+                              gap: 6px;
+
+                }
+
+
+
+
+                .rights-list ul li {
+
+                              font-size: 13px;
+
+                              color: #444;
+
+                              display: flex;
+
+                              align-items: flex-start;
+
+                              gap: 8px;
+
+                              line-height: 1.5;
+
+                }
+
+
+
+
+                .rights-list ul li::before {
+
+                              content: "✓";
+
+                              color: #667eea;
+
+                              font-weight: bold;
+
+                              flex-shrink: 0;
+
+                              margin-top: 1px;
+
+                }
+
+
+
+
+                .consultant-section {
+
+                              background: #f5f7ff;
+
+                              padding: 18px 20px;
+
+                              border-radius: 8px;
+
+                              margin-bottom: 24px;
+
+                              display: flex;
+
+                              gap: 15px;
+
+                              align-items: center;
+
+                }
+
+
+
+
+                .consultant-avatar {
+
+                              width: 56px;
+
+                              height: 56px;
+
+                              background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+                              border-radius: 50%;
+
+                              flex-shrink: 0;
+
+                              display: flex;
+
+                              align-items: center;
+
+                              justify-content: center;
+
+                              color: white;
+
+                              font-size: 22px;
+
+                }
+
+
+
+
+                .consultant-info h3 {
+
+                              font-size: 15px;
+
+                              color: #333;
+
+                              margin-bottom: 4px;
+
+                }
+
+
+
+
+                .consultant-info .role {
+
+                              font-size: 12px;
+
+                              color: #667eea;
+
+                              font-weight: 600;
+
+                              margin-bottom: 5px;
+
+                }
+
+
+
+
+                .consultant-info p {
+
+                              font-size: 13px;
+
+                              color: #666;
+
+                              line-height: 1.5;
+
+                }
+
+
+
+
+                .question-box {
+
+                              background: #e8f0ff;
+
+                              padding: 18px 20px;
+
+                              border-radius: 8px;
+
+                              margin-bottom: 20px;
+
+                              font-size: 16px;
+
+                              color: #333;
+
+                              font-weight: 600;
+
+                              text-align: center;
+
+                }
+
+
+
+
+                .options-label {
+
+                              font-size: 11px;
+
+                              color: #aaa;
+
+                              margin-bottom: 12px;
+
+                              text-transform: uppercase;
+
+                              letter-spacing: 0.5px;
+
+                }
+
+
+
+
+                .options-container {
+
+                              display: flex;
+
+                              flex-direction: column;
+
+                              gap: 10px;
+
+                }
+
+
+
+
+                .option-button {
+
+                              background: white;
+
+                              border: 2px solid #ddd;
+
+                              padding: 15px 20px;
+
+                              border-radius: 8px;
+
+                              cursor: pointer;
+
+                              font-size: 14px;
+
+                              color: #667eea;
+
+                              font-weight: 500;
+
+                              transition: all 0.25s ease;
+
+                              text-align: left;
+
+                              display: flex;
+
+                              align-items: center;
+
+                              gap: 12px;
+
+                }
+
+
+
+
+                .option-button .btn-icon {
+
+                              font-size: 20px;
+
+                              flex-shrink: 0;
+
+                }
+
+
+
+
+                .option-button .btn-text {
+
+                              display: flex;
+
+                              flex-direction: column;
+
+                              gap: 2px;
+
+                }
+
+
+
+
+                .option-button .btn-title {
+
+                              font-size: 14px;
+
+                              font-weight: 600;
+
+                              color: #333;
+
+                }
+
+
+
+
+                .option-button .btn-subtitle {
+
+                              font-size: 12px;
+
+                              color: #999;
+
+                              font-weight: 400;
+
+                }
+
+
+
+
+                .option-button:hover {
+
+                              border-color: #667eea;
+
+                              background: #f5f7ff;
+
+                              transform: translateY(-2px);
+
+                              box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+
+                }
+
+
+
+
+                .option-button:active {
+
+                              transform: translateY(0);
+
+                              background: #e8f0ff;
+
+                }
+
+
+
+
+                .footer {
+
+                              margin-top: 28px;
+
+                              padding-top: 18px;
+
+                              border-top: 1px solid #eee;
+
+                              text-align: center;
+
+                }
+
+
+
+
+                .footer a {
+
+                              color: #667eea;
+
+                              text-decoration: none;
+
+                              font-size: 12px;
+
+                              margin: 0 8px;
+
+                }
+
+
+
+
+                .footer a:hover {
+
+                              text-decoration: underline;
+
+                }
+
+
+
+
+                .footer p {
+
+                              color: #bbb;
+
+                              font-size: 11px;
+
+                              margin-top: 8px;
+
+                }
+
+
+
+
+                @media (max-width: 600px) {
+
+                              .container {
+
+                                                padding: 24px 20px;
+
+                              }
+
+
+
+
+                              .header {
+
+                                                flex-direction: column;
+
+                                                text-align: center;
+
+                              }
+
+
+
+
+                              .info-box {
+
+                                                font-size: 13px;
+
+                              }
+
+
+
+
+                              .consultant-section {
+
+                                                flex-direction: column;
+
+                                                text-align: center;
+
+                              }
+
+
+
+
+                              .consultant-avatar {
+
+                                                margin: 0 auto;
+
+                              }
+
+
+
+
+                              .option-button {
+
+                                                padding: 14px 16px;
+
+                              }
+
+                }
+
             </style>
+
   </head>
+
   <body>
-        <header>
-                  <h1>Home Care</h1>
-                <p>Soluções de Saúde em Casa</p>
-        </header>
-      
-      <nav>
-                <a href="#home">Início</a>a>
-                <a href="#features">Funcionalidades</a>a>
-                <a href="#contact">Contato</a>a>
-      </nav>
 
         <div class="container">
-                  <div class="welcome">
-                                <h2>Bem-vindo ao Home Care</h2>
-                                <p>Oferecemos soluções inovadoras para cuidados de saúde em casa, melhorando a qualidade de vida dos pacientes.</p>
+
+
+
+
+                  <div class="header">
+
+                                <div class="header-text">
+
+                                                  <p style="color: black;">especialistas em direito à saúde e home care</p>p>
+
+                                </div>div>
+
+                                <div class="logo">
+
+                                                  <svg width="680" height="560" viewBox="0 0 680 560" xmlns="http://www.w3.org/2000/svg">
+
+                                                                        <rect x="10" y="132" width="660" height="277" rx="10" fill="#00AEEF"/>
+
+                                                                        <text x="340" y="317" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="190" font-weight="400" fill="white" letter-spacing="-2">asf</text>text>
+
+                                                                        <text x="190" y="395" font-family="Arial, Helvetica, sans-serif" font-style="normal" font-size="40" font-weight="700" fill="white" textLength="300" lengthAdjust="spacingAndGlyphs">CONSULTORIA</text>text>
+
+                                                  </svg>svg>
+
+                                </div>div>
+
                   </div>div>
 
-                  <div id="features" class="features">
-                                <div class="feature">
-                                                  <h3>Monitoramento de Saúde</h3>
-                                                  <p>Acompanhe o status de saúde em tempo real com tecnologia avançada.</p>
-                                </div>div>
-                                <div class="feature">
-                                                  <h3>Agendamento de Consultas</h3>
-                                                  <p>Agende consultas com profissionais de saúde de forma fácil e rápida.</p>
-                                </div>div>
-                                <div class="feature">
-                                                  <h3>Histórico Médico Digital</h3>
-                                                  <p>Mantenha todo o seu histórico médico organizado e seguro.</p>
-                                </div>div>
-                                <div class="feature">
-                                                  <h3>Comunicação Profissional</h3>
-                                                  <p>Comunique-se diretamente com seus profissionais de saúde.</p>
-                                </div>div>
+
+
+
+                  <div class="alert-badge">Direito ao Home Care</div>div>
+
+
+
+
+                  <div class="info-box">
+
+                                Seu familiar precisa de <strong>atendimento domiciliar (home care)</strong> e o plano de saúde ou o poder público se recusa a fornecer?
+                  
+                              <br><br>
+                  
+                              A <strong>lei garante esse direito</strong>. Quando há prescrição médica e a operadora ou o Estado nega o serviço, é possível obter uma <strong>decisão judicial</strong> — inclusive de forma urgente — que obrigue a implantação imediata do home care.
+                  
+                              <span class="highlight">Você não precisa aceitar uma negativa. A Justiça pode garantir esse cuidado.</span>span>
+                  
                   </div>div>
+        
+        
+        
+        
+                <div class="rights-list">
+                
+                            <p>O que podemos garantir para você</p>
+                
+                            <ul>
+
+                                              <li>Análise do seu caso</li>
+                            
+                                            <li>Pedido de liminar urgente</li>
+                            
+                                            <li>Obrigação do plano de saúde ou SUS de custear o home care</li>
+                            
+                                            <li>Acompanhamento até a implantação do serviço</li>
+                            
+                            </ul>
+                
+                </div>div>
+        
+        
+        
+        
+                <div class="consultant-section">
+                
+                            <div class="consultant-avatar">👩‍⚖️</div>div>
+                
+                            <div class="consultant-info">
+                            
+                                            <p>Especialista em direito à saúde com mais de 10 anos de atuação. Já ajudou centenas de famílias a garantirem o home care por via judicial.</p>
+                            
+                            </div>div>
+                
+                </div>div>
+        
+        
+        
+        
+                <div class="question-box">
+                
+                            Como podemos te ajudar hoje?
+                
+                </div>div>
+        
+        
+        
+        
+                <div class="options-label">Escolha uma opção</div>div>
+        
+        
+        
+        
+                <div class="options-container">
+                
+                            <button class="option-button" onclick="handleOption('direitos')">
+                            
+                                            <span class="btn-icon">⚖️</span>span>
+                            
+                                            <span class="btn-text">
+                                            
+                                                                <span class="btn-title">Entender meus direitos</span>span>
+                                            
+                                                                <span class="btn-subtitle">Saiba o que a lei garante para o seu familiar</span>span>
+                                            
+                                            </span>span>
+                            
+                            </button>button>
+                
+                
+                
+                
+                            <button class="option-button" onclick="handleOption('processo')">
+                            
+                                            <span class="btn-icon">📋</span>span>
+                            
+                                            <span class="btn-text">
+                                            
+                                                                <span class="btn-title">Iniciar processo judicial</span>span>
+                                            
+                                                                <span class="btn-subtitle">Entrar com ação para obter decisão urgente</span>span>
+                                            
+                                            </span>span>
+                            
+                            </button>button>
+                
+                
+                
+                
+                            <button class="option-button" onclick="handleOption('documentos')">
+                            
+                                            <span class="btn-icon">📄</span>span>
+                            
+                                            <span class="btn-text">
+                                            
+                                                                <span class="btn-title">Documentos necessários</span>span>
+                                            
+                                                                <span class="btn-subtitle">Veja o que você precisa reunir para o processo</span>span>
+                                            
+                                            </span>span>
+                            
+                            </button>button>
+                
+                
+                
+                
+                            <button class="option-button" onclick="window.location.href='asf-especialista.html'">
+                            
+                                            <span class="btn-icon">💬</span>span>
+                            
+                                            <span class="btn-text">
+                                            
+                                                                <span class="btn-title">Falar com especialista</span>span>
+                                            
+                                                                <span class="btn-subtitle">Atendimento direto com nossa equipe agora</span>span>
+                                            
+                                            </span>span>
+                            
+                            </button>button>
+                
+                </div>div>
+        
+        
+        
+        
+                <div class="footer">
+                
+                            <a href="#termos">Termos</a>a>
+                
+                            <a href="#privacidade">Política de Privacidade</a>a>
+                
+                            <a href="#contato">Contato</a>a>
+                
+                            <p>&copy; 2025 ASF. Todos os direitos reservados.</p>
+                
+                </div>div>
+        
+        
+        
+        
         </div>div>
+  
+  
+  
+  
+      <script>
 
-        <footer>
-                  <p>&copy; 2024 Home Care. Todos os direitos reservados.</p>
-        </footer>
+                const mensagens = {
+
+                              direitos: 'Você selecionou: Entender meus direitos\n\nVocê tem direito ao home care quando há prescrição médica. Planos de saúde e o poder público são obrigados a fornecer esse serviço por determinação legal e judicial. Entre em contato para uma análise do seu caso.',
+
+                              processo: 'Você selecionou: Iniciar processo judicial\n\nPodemos entrar com uma ação judicial urgente (liminar) para garantir o home care do seu familiar. Nossa equipe irá orientá-lo em cada etapa.',
+
+                              documentos: 'Você selecionou: Documentos necessários\n\nOs principais documentos são:\n• Prescrição médica com justificativa\n• Relatório médico detalhado\n• Negativa formal do plano/SUS (se houver)\n• Documentos pessoais do paciente e responsável\n\nNossa equipe pode te orientar sobre cada item.',
+
+                              especialista: 'Você selecionou: Falar com especialista\n\nEm breve você será direcionado para falar diretamente com um membro da nossa equipe. Atendemos por WhatsApp e telefone.'
+
+                };
+
+
+
+
+                function handleOption(opcao) {
+
+                              alert(mensagens[opcao] || 'Opção selecionada. Em breve você será atendido.');
+
+                              console.log('Opção selecionada:', opcao);
+
+                }
+
+      </script>
+
   </body>
-</html>html></p>
-        </footer>
-      </nav></p></h1>
-        </header>
+
+</html>html>
+      </script></p></p></li></li>
+                            </ul></p></strong></strong>
   </body>
       </style></title>
   </head>
